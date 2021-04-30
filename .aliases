@@ -10,6 +10,11 @@ alias -- -="cd -"
 
 # Customs
 alias python=python3
+alias webDev="cd /../../Volumes/Ritesh/computer-science/projects/web-dev/"
+alias appDev="cd /../../Volumes/Ritesh/computer-science/projects/app-dev/"
+alias shellScripting="cd /../../Volumes/Ritesh/computer-science/projects/shell-scripting/"
+alias gsoc="cd /../../Volumes/Ritesh/computer-science/GSOC"
+alias learning="cd /../../Volumes/Ritesh/computer-science/learning"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
