@@ -38,6 +38,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1;
 
 # Add '~bin' to the $PATH
 export PATH="$HOME/bin:$PATH";
+
 # Android Dev setup
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
