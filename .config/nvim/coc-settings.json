@@ -8,6 +8,5 @@
     "javascriptreact",
     "typescript.tsx",
     "graphql"
-  ],
-  "snippets.ultisnips.usePythonx": false
+  ]
 }
