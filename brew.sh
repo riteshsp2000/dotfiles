@@ -33,3 +33,4 @@ brew install --cask handbrake
 # Install Source Code Pro Font
 brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
+brew install neovim
