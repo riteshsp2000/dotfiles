@@ -1,4 +1,5 @@
 {
+  "pairs.enableCharacters": ["(", "[", "{", "<", "'", "\"", "`"],
   "suggest.noselect": false,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
@@ -8,5 +9,6 @@
     "javascriptreact",
     "typescript.tsx",
     "graphql"
-  ]
+  ],
+  "snippets.ultisnips.usePythonx": false
 }
