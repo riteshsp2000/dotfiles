@@ -10,6 +10,11 @@ function rmd() {
   rm -rf "$1";
 }
 
-function mkf() { 
-  mkdir -p "$(dirname "$1")" && touch "$1" ;  
+function mkf() {
+  mkdir -p "$(dirname "$1")" && touch "$1" ;
+}
+
+function run-cpp() {
+  g++ "$1";
+  ./a.out
 }
