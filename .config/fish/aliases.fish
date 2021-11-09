@@ -1,21 +1,23 @@
 #!/usr/bin/env bash
 
 # Easier navigation: .., ..., ...., ....., ~ and -
-alias .. "cd .."
-alias ... "cd ../.."
-alias .... "cd ../../.."
-alias ..... "cd ../../../.."
-alias ~ "cd ~" 
-alias -- - "cd -"
+# alias .. "cd .."
+# alias ... "cd ../.."
+# alias .... "cd ../../.."
+# alias ..... "cd ../../../.."
+# alias ~ "cd ~"
+# alias -- - "cd -"
 
 # Customs
-alias python python3
-alias webDev "cd /../../Volumes/Ritesh/computer-science/projects/web-dev/"
-alias appDev "cd /../../Volumes/Ritesh/computer-science/projects/app-dev/"
-alias shellScripting "cd /../../Volumes/Ritesh/computer-science/projects/shell-scripting/"
-alias gsoc "cd /../../Volumes/Ritesh/computer-science/GSOC"
-alias learning "cd /../../Volumes/Ritesh/computer-science/learning"
-
+set ssd = '/../../Volumes/Ritesh/'
+set ssd_cs = '$ssd/cs'
+alias corporate "cd $ssd_cs/corporate"
+alias learning "cd $ssd_cs/learning"
+alias gsoc "cd $ssd_cs/gsoc"
+alias opensource "cd $ssd_cs/opensource"
+alias hackathons "cd $ssd_cs/hackathons"
+alias webDev "cd $ssd_cs/projects/web-dev"
+alias appDev "cd $ssd_cs/projects/app-dev"
 
 # Always enable colored `grep` output
 # Note: `GREP_OPTIONS "--color auto"` is deprecated, hence the alias usage.
@@ -45,9 +47,9 @@ alias ips "ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 alias ifactive "ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
 
 # JavaScriptCore REPL
-jscbin "/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc";
-[ -e "${jscbin}" ] && alias jsc="${jscbin}";
-unset jscbin;
+# jscbin "/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc";
+# [ -e "$jscbin" ] && alias jsc="$jscbin";
+# unset jscbin;
 
 # Recursively delete `.DS_Store` files
 alias cleanup "find . -type f -name '*.DS_Store' -ls -delete"
@@ -78,7 +80,7 @@ alias spoton "sudo mdutil -a -i on"
 alias chromekill "ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
 # Reload the shell (i.e. invoke as a login shell)
-alias reload "exec ${SHELL} -l"
+alias reload "exec $SHELL -l"
 
 # Print each PATH entry on a separate line
-alias path 'echo -e ${PATH//:/\\n}'
+alias path 'echo -e $PATH//:/\\n'
