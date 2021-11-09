@@ -1,5 +1,5 @@
 " Coc configuration
-    
+
 let g:coc_global_extensions = [
     \ 'coc-snippets',
     \ 'coc-pairs',
@@ -8,7 +8,7 @@ let g:coc_global_extensions = [
     \ 'coc-prettier',
     \ 'coc-json',
   ]
-   
+
 " Default settings suggested by README.md
 set hidden " TextEdit might fail if hidden is not set.
 set nobackup " Some servers have issues with backup files, see #649.
@@ -17,7 +17,7 @@ set cmdheight=2 " Give more space for displaying messages.
 set updatetime=300 "Reduces delay (default is 4s)
 set shortmess+=c " Don't give completion messages.
 set signcolumn=yes " Always show signcolumns
-   
+
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab isnot mapped by
 " other plugin before putting this into your config.
@@ -31,7 +31,7 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-   
+
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
@@ -126,4 +126,4 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR> 
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>

@@ -18,10 +18,10 @@ set undodir=~/.config/nvim/undodir
 set undofile
 
 set incsearch " Highlights as we go on searching
-set scrolloff=10
+set scrolloff=20
 set noshowmode
 set completeopt=menuone,noinsert,noselect
-set signcolumn=number
+set signcolumn=yes
 
 set cmdheight=2 " Give more space for displaying messages
 set  updatetime=50 " Shorter response time => faster updates
@@ -43,3 +43,9 @@ inoremap jk <ESC>
 " j/k will move virtual lines (lines that wrap)
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+
+ colorscheme gruvbox
+" colorscheme dracula
+" colorscheme monokai_pro
+" colorscheme OceanicNext
+"colorscheme codedark
