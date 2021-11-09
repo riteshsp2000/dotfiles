@@ -1,4 +1,4 @@
-#!/usr/bin/env bash#!/usr/bin/env bash
+#!/usr/bin/env bash
 
 # Make vim the default editor.
 export EDITOR='vim';
@@ -35,12 +35,3 @@ export GPG_TTY=$(tty);
 
 # Hide the “default interactive shell is now zsh” warning on macOS.
 export BASH_SILENCE_DEPRECATION_WARNING=1;
-
-# Add '~bin' to the $PATH
-export PATH="$HOME/bin:$PATH";
-# Android Dev setup
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools

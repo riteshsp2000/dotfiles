@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Shell prompt based on the Solarized Dark theme.
+# Screenshot: http://i.imgur.com/EkEtphC.png
+# Heavily inspired by @necolas’s prompt: https://github.com/necolas/dotfiles
+# iTerm → Profiles → Text → use 13pt Monaco with 1.1 vertical spacing.
+
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
 	export TERM='gnome-256color';
 elif infocmp xterm-256color >/dev/null 2>&1; then
@@ -22,6 +27,9 @@ prompt_git() {
 		git rev-parse --short HEAD 2> /dev/null || \
 		echo '(unknown)')";
 
+	# Early exit for Chromium & Blink repo, as the dirty check takes too long.
+	# Thanks, @paulirish!
+	# https://github.com/paulirish/dotfiles/blob/dd33151f/.bash_prompt#L110-L123
 	repoUrl="$(git config --get remote.origin.url)";
 	if grep -q 'chromium/src.git' <<< "${repoUrl}"; then
 		s+='*';
@@ -81,9 +89,9 @@ fi;
 
 # Highlight the user name when logged in as root.
 if [[ "${USER}" == "root" ]]; then
-	userStyle="${red}";
-else
 	userStyle="${orange}";
+else
+	userStyle="${red}";
 fi;
 
 # Highlight the hostname when connected via SSH.
@@ -95,14 +103,14 @@ fi;
 
 # Set the terminal title and prompt.
 PS1="\[\033]0;\W\007\]"; # working directory base name
+PS1+="\[${bold}\]\n"; # newline
 PS1+="\[${userStyle}\]\u"; # username
 PS1+="\[${white}\] @ ";
 PS1+="\[${hostStyle}\]\h"; # host
 PS1+="\[${white}\] in ";
-PS1+="\[${green}\]\w"; # working directory full path
+PS1+="\[${green}\]\W"; # working directory full path
 PS1+="\$(prompt_git \"\[${white}\] on \[${violet}\]\" \"\[${blue}\]\")"; # Git repository details
-PS1+="\n";
-PS1+="\[${white}\]\$ \[${reset}\]"; # `$` (and reset color)
+PS1+="\[${white}\] \$ \[${reset}\]"; # `$` (and reset color)
 export PS1;
 
 PS2="\[${yellow}\]→ \[${reset}\]";
