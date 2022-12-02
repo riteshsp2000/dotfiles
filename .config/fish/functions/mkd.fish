@@ -1,6 +1,5 @@
-#!/usr/bin/env bash
 
 # Create a new directory and enter it
-function mkd 
+function mkd
 	mkdir -p $argv && cd $argv
 end

@@ -1,31 +1,48 @@
-# cl#!/usr/bin/env bash
-
-# Easier navigation: .., ..., ...., ....., ~ and -
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ~="cd ~" # `cd` is probably faster to type though
-alias -- -="cd -"
-
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias p="cd ~/projects"
-alias g="git"
+alias copyssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
+alias reloadshell="source $HOME/.zshrc"
+alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+alias ll="/opt/homebrew/opt/coreutils/libexec/gnubin/ls -AhlFo --color --group-directories-first"
+alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 
+# Directories
+alias dotfiles="cd $DOTFILES"
+alias library="cd $HOME/Library"
+alias docs="cd $HOME/docs"
+alias downloads="cd $HOME/downloads"
+alias desktop="cd $HOME/desktop"
+alias projects="cd $PROJECTS"
+alias windli="cd $PROJECTS/windli"
+# alias sass="cd $PROJECTS/sass"
 
-ssd=/../../Volumes/Ritesh
-ssd_cs=$ssd/cs
-alias corporate="cd $ssd_cs/corporate"
-alias learning="cd $ssd_cs/learning"
-alias gsoc="cd $ssd_cs/gsoc"
-alias opensource="cd $ssd_cs/opensource"
-alias hackathons="cd $ssd_cs/hackathons"
-alias webDev="cd $ssd_cs/projects/web-dev"
-alias appDev="cd $ssd_cs/projects/app-dev"
-alias webDev2="cd /../../Volumes/Ritesh/cs/projects/web-dev"
+# JS
+alias nfresh="rm -rf node_modules/ package-lock.json yarn.lock && npm install"
+alias watch="npm run watch"
+
+# Docker
+alias docker-composer="docker-compose"
+
+# SQL Server
+alias mssql="docker run -e ACCEPT_EULA=Y -e SA_PASSWORD=LaravelWow1986! -p 1433:1433 mcr.microsoft.com/mssql/server:2017-latest"
+
+# Git
+alias gst="git status"
+alias gb="git branch"
+alias gc="git checkout"
+alias gl="git log --oneline --decorate --color"
+alias amend="git add . && git commit --amend --no-edit"
+alias commit="git add . && git commit -m"
+alias diff="git diff"
+alias force="git push --force"
+alias nuke="git clean -df && git reset --hard"
+alias pop="git stash pop"
+alias pull="git pull"
+alias push="git push"
+alias resolve="git add . && git commit --no-edit"
+alias stash="git stash -u"
+alias unstage="git restore --staged ."
+alias wip="commit wip"
+
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
