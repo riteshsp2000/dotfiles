@@ -1,4 +1,4 @@
-# cl#!/usr/bin/env bash
+#!/usr/bin/env bash
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
@@ -14,18 +14,6 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
 alias g="git"
-
-
-ssd=/../../Volumes/Ritesh
-ssd_cs=$ssd/cs
-alias corporate="cd $ssd_cs/corporate"
-alias learning="cd $ssd_cs/learning"
-alias gsoc="cd $ssd_cs/gsoc"
-alias opensource="cd $ssd_cs/opensource"
-alias hackathons="cd $ssd_cs/hackathons"
-alias webDev="cd $ssd_cs/projects/web-dev"
-alias appDev="cd $ssd_cs/projects/app-dev"
-alias webDev2="cd /../../Volumes/Ritesh/cs/projects/web-dev"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -59,9 +47,7 @@ alias sudo='sudo '
 
 # Get week number
 alias week='date +%V'
-
-# Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+'
 
 # Google Chrome
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
