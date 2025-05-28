@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Starship config file location
-export STARSHIP_CONFIG=~/.config/starship.toml
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 # Make vim the default editor.
 export EDITOR=/opt/homebrew/bin/nvim

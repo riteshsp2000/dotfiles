@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 
-# 3. Use GNU Stow to symlink dotfiles
-echo "🔗 Symlinking dotfiles using stow..."
-stow --target"$HOME" zsh
-stow --target"$HOME/.config/ghostty" ghostty
-stow --target"$HOME/.config/starship" starship
+ensure_dir_and_stow () {
+    mkdir -p "$1"
+    stow --target="$1" "$2"
+}
+
+ensure_dir_and_stow "$HOME/.config/zsh/" zsh
+ln -sf ~/.config/zsh/.zshrc ~/.zshrc
+ensure_dir_and_stow "$HOME/.config/brew/" brew
+ensure_dir_and_stow "$HOME/.config/ghostty/" ghostty
+ensure_dir_and_stow "$HOME/.config/starship/" starship
+ensure_dir_and_stow "$HOME/.config/zed/" zed

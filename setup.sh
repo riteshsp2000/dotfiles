@@ -10,14 +10,14 @@ if ! command -v brew &>/dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# # 2. Install everything from the Brewfile
+# 2. Install everything from the Brewfile
 echo "📦 Installing packages from Brewfile..."
-brew bundle --file="$HOME/dotfiles/brew/Brewfile"
+brew bundle --file="$HOME/.config/brew/Brewfile" 
 
 # 3. Use GNU Stow to symlink dotfiles
 echo "🔗 Symlinking dotfiles using stow..."
-stow brew
-stow zsh
+chmod +x ./linkfiles.sh
+./linkfiles.sh
 
 # 4. Source .zshrc
 echo "🔁 Sourcing .zshrc..."

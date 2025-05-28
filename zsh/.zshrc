@@ -1,5 +1,5 @@
 # Path to dotfiles zsh config
-ZSH_CONFIG_DIR="${HOME}/.config"
+ZSH_CONFIG_DIR="${HOME}/.config/zsh"
 
 # Load exports
 source "${ZSH_CONFIG_DIR}/exports.zsh"

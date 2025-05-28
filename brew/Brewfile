@@ -1,5 +1,6 @@
 cask_args appdir: '/Applications'
 
+brew 'git'
 brew 'postgresql@14'
 brew 'wget'
 brew 'neovim'
