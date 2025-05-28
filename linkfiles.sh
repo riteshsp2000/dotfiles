@@ -11,3 +11,5 @@ ensure_dir_and_stow "$HOME/.config/brew/" brew
 ensure_dir_and_stow "$HOME/.config/ghostty/" ghostty
 ensure_dir_and_stow "$HOME/.config/starship/" starship
 ensure_dir_and_stow "$HOME/.config/zed/" zed
+ensure_dir_and_stow "$HOME/.config/tmux/" tmux
+ensure_dir_and_stow "$HOME/.config/zellij/" zellij
