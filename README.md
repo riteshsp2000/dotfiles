@@ -1,0 +1,32 @@
+- main
+
+  - zsh
+    - zsh_prompt
+    - zsh_profile
+    - aliases
+    - exports
+    - functions
+  - .config
+    - nvim
+    - raycast
+    - zed
+    - ohmyzsh/powershell
+  - scripts
+    - .brew
+    - .ssh
+    - .macos
+  - git
+    - .gitattributes
+    - .gitconfig
+    - .gitignore
+  - tmux
+
+  - .zshrc
+  - .launch
+
+- terminal
+  - terminal - picking the right one
+  - multiplexer - multitasking
+  - shell
+  - shell theme
+  -
