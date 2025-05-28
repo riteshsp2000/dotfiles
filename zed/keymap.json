@@ -2,28 +2,61 @@
   {
     "context": "Workspace",
     "bindings": {
-      "space e": "workspace::ToggleLeftDock"
+      "ctrl-h": "tab_switcher::Toggle",
+      "ctrl-l": ["tab_switcher::Toggle", { "select_last": true }]
     }
   },
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-h": "workspace::ActivatePaneLeft",
-      "ctrl-l": "workspace::ActivatePaneRight",
-      "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-h": "tab_switcher::Toggle",
+      "ctrl-l": ["tab_switcher::Toggle", { "select_last": true }],
       "ctrl-t": "workspace::NewTerminal",
       "ctrl-w": ["pane::CloseActiveItem", { "close_pinned": false }]
     }
   },
   {
-    "context": "vim_mode == insert && !menu",
+    "context": "ProjectPanel && not_editing",
     "bindings": {
-      "j k": "vim::NormalBefore" // In insert mode, make jk escape to normal mode.
+      "a": "project_panel::NewFile",
+      "d": ["project_panel::Delete", { "skip_prompt": false }],
+      "D": ["project_panel::Delete", { "skip_prompt": true }],
+      "r": "project_panel::Rename",
+      "c": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "x": "project_panel::Cut",
+      "o": "project_panel::OpenPermanent",
+      "}": "project_panel::SelectNextDirectory",
+      "{": "project_panel::SelectPrevDirectory",
+      "shift-g": "menu::SelectLast",
+      "g g": "menu::SelectFirst",
+      "space b o": "project_panel::CollapseAllEntries"
+    }
+  },
+  {
+    "context": "Editor || menu",
+    "bindings": {
+      "space e": "workspace::ToggleLeftDock",
+      "space E": "workspace::ToggleRightDock",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight"
+    }
+  },
+  {
+    "context": "(Editor && vim_mode == insert && !menu)",
+    "bindings": {
+      // "j k": "vim::NormalBefore" // In insert mode, make jk escape to normal mode.
+      "j k": "vim::SwitchToNormalMode"
     }
   },
   {
     "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {}
+  },
+  {
+    "context": "VimControl && !menu",
     "bindings": {
       // Window splitting + navigation
       "space s v": "pane::SplitDown",
@@ -45,7 +78,8 @@
       "g T": "editor::GoToTypeDefinitionSplit",
       "g r": "editor::FindAllReferences",
       "] d": "editor::GoToDiagnostic",
-      "[ d": "editor::GoToPreviousDiagnostic"
+      "[ d": "editor::GoToPreviousDiagnostic",
+      "space z z": "pane::CloseAllItems"
     }
   },
   {
