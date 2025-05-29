@@ -7,6 +7,9 @@ source "${ZSH_CONFIG_DIR}/exports.zsh"
 # Load aliases
 source "${ZSH_CONFIG_DIR}/aliases.zsh"
 
+# Load paths
+source "${ZSH_CONFIG_DIR}/path.zsh"
+
 # Load functions (optional)
 [[ -f "${ZSH_CONFIG_DIR}/functions.zsh" ]] && source "${ZSH_CONFIG_DIR}/functions.zsh"
 
